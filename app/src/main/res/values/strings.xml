@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ChatApplication</string>
+    <string name="app_name">AndroidChatApplication</string>
     <string name="title_activity_users">UsersActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -11,4 +11,6 @@
     <string name="button_login">Login</string>
     <string name="button_register">Register</string>
     <string name="title_activity_conversation">ConversationActivity</string>
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search hint</string>
 </resources>

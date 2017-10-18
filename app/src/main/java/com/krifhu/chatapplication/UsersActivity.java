@@ -1,5 +1,7 @@
 package com.krifhu.chatapplication;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +19,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.SearchView;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -99,7 +102,7 @@ public class UsersActivity extends AppCompatActivity
                         mAdapter = new MyAdapter(username, input);
                         recyclerView.setAdapter(mAdapter);
                     }
-                }).execute(new URL("http://192.168.1.43:8080/ChatApplicationGit/api/users/get")); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
+                }).execute(new URL("http://158.38.193.201:8080/ChatApplication/api/users/get")); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -125,6 +128,15 @@ public class UsersActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.users, menu);
+
+        // Associate searchable configuration with the SearchView
+        /*SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
+                */
         return true;
     }
 
@@ -152,17 +164,11 @@ public class UsersActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_account) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_settings) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_logout) {
 
         }
 

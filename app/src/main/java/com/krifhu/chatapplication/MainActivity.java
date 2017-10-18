@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }
                     }
-                }).execute(new URL("http://192.168.1.43:8080/ChatApplicationGit/api/users/getUser?username=" + username)); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
+                }).execute(new URL("http://158.38.193.201:8080/ChatApplication/api/users/getUser?username=" + username)); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }

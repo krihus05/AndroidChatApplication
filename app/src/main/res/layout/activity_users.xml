@@ -14,12 +14,12 @@
         android:paddingTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="vertical" />
+        android:scrollbars="vertical"/>
 
     <include
         layout="@layout/app_bar_users"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
 
     <android.support.design.widget.NavigationView
@@ -27,8 +27,9 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        android:background="@android:color/white"
+
         android:fitsSystemWindows="true"
-        android:background="@color/colorAccent"
         app:headerLayout="@layout/nav_header_users"
         app:menu="@menu/activity_users_drawer" />
 

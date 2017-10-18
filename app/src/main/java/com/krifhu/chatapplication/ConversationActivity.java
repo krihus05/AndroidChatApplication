@@ -144,7 +144,7 @@ public class ConversationActivity extends AppCompatActivity
                                 }
 
                             }
-                        }).execute(new URL("http://192.168.1.43:8080/ChatApplicationGit/api/conversations/getConversation?user1=" + user1 + "&user2=" + user2)); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
+                        }).execute(new URL("http://158.38.193.201:8080/ChatApplication/api/conversations/getConversation?user1=" + user1 + "&user2=" + user2)); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
@@ -225,17 +225,11 @@ public class ConversationActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_account) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_settings) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_logout) {
 
         }
 
@@ -250,7 +244,7 @@ public class ConversationActivity extends AppCompatActivity
         //System.out.println("Message: " + message);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://192.168.1.43:8080/ChatApplicationGit/api/conversations/add?sender=" + user1 + "&receiver=" + user2 + "&messageBody=" + message;
+        String url ="http://158.38.193.201:8080/ChatApplication/api/conversations/add?sender=" + user1 + "&receiver=" + user2 + "&messageBody=" + message;
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
