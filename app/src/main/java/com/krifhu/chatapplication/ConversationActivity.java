@@ -144,7 +144,7 @@ public class ConversationActivity extends AppCompatActivity
                                 }
 
                             }
-                        }).execute(new URL("http://158.38.193.201:8080/ChatApplication/api/conversations/getConversation?user1=" + user1 + "&user2=" + user2)); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
+                        }).execute(new URL("http://192.168.1.43:8080/ChatApplicationGit/api/conversations/getConversation?user1=" + user1 + "&user2=" + user2)); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
                     } catch (MalformedURLException e) {
                         e.printStackTrace();
                     }
@@ -226,10 +226,17 @@ public class ConversationActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_account) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_logout) {
+
+            //super.finish();
+
+            Intent intent = new Intent(ConversationActivity.this , MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
 
         }
 
@@ -241,10 +248,11 @@ public class ConversationActivity extends AppCompatActivity
     public void sendMessage(View view){
         EditText massageToSend = (EditText) findViewById(R.id.messageToSend);
         final String message = massageToSend.getText().toString();
+        massageToSend.setText("");
         //System.out.println("Message: " + message);
 
         RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://158.38.193.201:8080/ChatApplication/api/conversations/add?sender=" + user1 + "&receiver=" + user2 + "&messageBody=" + message;
+        String url ="http://192.168.1.43:8080/ChatApplicationGit/api/conversations/add?sender=" + user1 + "&receiver=" + user2 + "&messageBody=" + message;
         // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

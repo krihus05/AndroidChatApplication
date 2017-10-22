@@ -102,7 +102,7 @@ public class UsersActivity extends AppCompatActivity
                         mAdapter = new MyAdapter(username, input);
                         recyclerView.setAdapter(mAdapter);
                     }
-                }).execute(new URL("http://158.38.193.201:8080/ChatApplication/api/users/get")); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
+                }).execute(new URL("http://192.168.1.43:8080/ChatApplicationGit/api/users/get")); //(new url.("http://158.38.92.103:8080/pstore/api/store/images/"));
             } catch (MalformedURLException e) {
                 e.printStackTrace();
             }
@@ -165,10 +165,14 @@ public class UsersActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_account) {
-            // Handle the camera action
+
         } else if (id == R.id.nav_settings) {
 
         } else if (id == R.id.nav_logout) {
+
+            super.finish();
+
+
 
         }
 
